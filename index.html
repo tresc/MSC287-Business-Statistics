@@ -2,28 +2,176 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Course Notes and Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Portal | Resources</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        a { text-decoration: none; color: #0066cc; font-weight: bold; }
-        a:hover { text-decoration: underline; }
+        :root {
+            --bg: #0d1117;
+            --card-bg: #161b22;
+            --text: #c9d1d9;
+            --accent: #58a6ff;
+            --border: #30363d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s, border-color 0.2s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            background: #1c2128;
+        }
+
+        .icon {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .card-content {
+            flex-grow: 1;
+        }
+
+        .card-title {
+            display: block;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-sub {
+            font-size: 0.85rem;
+            color: #8b949e;
+        }
+
+        .special-card {
+            grid-column: 1 / -1;
+            border-left: 4px solid #f85149;
+        }
     </style>
 </head>
 <body>
-    <h1>Study Materials</h1>
-    <ul>
-        <li><a href="Chapter_1.pdf">Chapter 1</a></li>
-        <li><a href="Chapter_2.pdf">Chapter 2</a></li>
-        <li><a href="Chapter_3.pdf">Chapter 3</a></li>
-        <li><a href="Chapter_4.pdf">Chapter 4</a></li>
-        <li><a href="Chapter_5.pdf">Chapter 5</a></li>
-        <li><a href="Chapter_6.pdf">Chapter 6</a></li>
-        <li><a href="Chapter_7.pdf">Chapter 7</a></li>
-        <li><a href="Chapter_8.pdf">Chapter 8</a></li>
-        <li><a href="Practice_Questions_CH_1_8.pdf">Practice Questions (CH 1-8)</a></li>
-        <li><a href="Mock_Exam_MSC.pdf">Mock Exam MSC</a></li>
-    </ul>
+
+<div class="container">
+    <header>
+        <h1>📚 My Study Portal</h1>
+        <p>Resource library for MSC Exam Prep</p>
+    </header>
+
+    <div class="grid">
+        <a href="Chapter_1.pdf" target="_blank" class="card">
+            <span class="icon">📄</span>
+            <div class="card-content">
+                <span class="card-title">Chapter 1</span>
+                <span class="card-sub">PDF Document</span>
+            </div>
+        </a>
+        <a href="Chapter_2.pdf" target="_blank" class="card">
+            <span class="icon">📄</span>
+            <div class="card-content">
+                <span class="card-title">Chapter 2</span>
+                <span class="card-sub">PDF Document</span>
+            </div>
+        </a>
+        <a href="Chapter_3.pdf" target="_blank" class="card">
+            <span class="icon">📄</span>
+            <div class="card-content">
+                <span class="card-title">Chapter 3</span>
+                <span class="card-sub">PDF Document</span>
+            </div>
+        </a>
+        <a href="Chapter_4.pdf" target="_blank" class="card">
+            <span class="icon">📄</span>
+            <div class="card-content">
+                <span class="card-title">Chapter 4</span>
+                <span class="card-sub">PDF Document</span>
+            </div>
+        </a>
+        <a href="Chapter_5.pdf" target="_blank" class="card">
+            <span class="icon">📄</span>
+            <div class="card-content">
+                <span class="card-title">Chapter 5</span>
+                <span class="card-sub">PDF Document</span>
+            </div>
+        </a>
+        <a href="Chapter_6.pdf" target="_blank" class="card">
+            <span class="icon">📄</span>
+            <div class="card-content">
+                <span class="card-title">Chapter 6</span>
+                <span class="card-sub">PDF Document</span>
+            </div>
+        </a>
+        <a href="Chapter_7.pdf" target="_blank" class="card">
+            <span class="icon">📄</span>
+            <div class="card-content">
+                <span class="card-title">Chapter 7</span>
+                <span class="card-sub">PDF Document</span>
+            </div>
+        </a>
+        <a href="Chapter_8.pdf" target="_blank" class="card">
+            <span class="icon">📄</span>
+            <div class="card-content">
+                <span class="card-title">Chapter 8</span>
+                <span class="card-sub">PDF Document</span>
+            </div>
+        </a>
+
+        <a href="Practice_Questions_CH_1_8.pdf" target="_blank" class="card special-card">
+            <span class="icon">✍️</span>
+            <div class="card-content">
+                <span class="card-title">Practice Questions</span>
+                <span class="card-sub">Chapters 1 - 8 Comprehensive</span>
+            </div>
+        </a>
+
+        <a href="Mock_Exam_MSC.pdf" target="_blank" class="card special-card" style="border-left-color: #fca321;">
+            <span class="icon">🎓</span>
+            <div class="card-content">
+                <span class="card-title">Mock Exam</span>
+                <span class="card-sub">Final Preparation</span>
+            </div>
+        </a>
+    </div>
+</div>
+
 </body>
 </html>
