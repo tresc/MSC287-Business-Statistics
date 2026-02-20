@@ -3,188 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Resource Repository</title>
+    <title>MSC Statistics Repository</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root {
-            --bg: #0d1117;
-            --surface: #161b22;
-            --border: #30363d;
-            --text-primary: #f0f6fc;
-            --text-secondary: #8b949e;
-            --accent: #58a6ff;
+            --bg: #ffffff;
+            --surface: #f8f9fa;
+            --border: #dee2e6;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --accent: #0056b3;
+            --highlight: #28a745;
         }
 
         body {
-            font-family: -apple-system, "Segoe UI", Arial, sans-serif;
-            background-color: var(--bg);
+            font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9; /* Light gray page background */
             color: var(--text-primary);
             margin: 0;
             display: flex;
             justify-content: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         .wrapper {
             width: 100%;
-            max-width: 900px;
+            max-width: 850px;
+            background: var(--bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
         }
 
         h1 {
-            font-size: 1.5rem;
-            font-weight: 500;
+            font-size: 1.75rem;
+            font-weight: 700;
             margin: 0;
-            letter-spacing: -0.5px;
+            color: #1a1e21;
         }
 
         .subtitle {
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 5px;
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 16px;
+            display: block;
         }
 
         .file-list {
             display: flex;
             flex-direction: column;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            overflow: hidden;
+            gap: 16px;
+            margin-bottom: 40px;
         }
 
         .file-item {
             display: grid;
             grid-template-columns: 1fr auto;
-            align-items: center;
-            padding: 16px 24px;
+            align-items: flex-start;
+            padding: 24px;
             background: var(--surface);
             text-decoration: none;
-            border-bottom: 1px solid var(--border);
+            border: 1px solid var(--border);
+            border-radius: 6px;
             color: var(--text-primary);
+            transition: background-color 0.2s;
         }
 
-        .file-item:last-child {
-            border-bottom: none;
+        .file-item:hover {
+            background-color: #e9ecef;
+            border-color: #ced4da;
         }
 
         .file-info .name {
             display: block;
-            font-weight: 500;
-            font-size: 1rem;
-            margin-bottom: 2px;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--accent);
+            margin-bottom: 8px;
         }
 
-        .file-info .meta {
-            font-size: 0.8rem;
+        .file-info .summary {
+            font-size: 0.95rem;
             color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            line-height: 1.6;
         }
 
         .view-link {
             font-size: 0.85rem;
-            color: var(--accent);
-            border: 1px solid var(--border);
-            padding: 6px 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border: 1px solid #adb5bd;
+            padding: 8px 16px;
             border-radius: 4px;
+            background: white;
+            white-space: nowrap;
+            margin-left: 20px;
+            align-self: center;
         }
 
-        /* Distinct color for exams/questions without using emojis */
-        .priority-item .name {
-            color: #ff7b72;
+        .assessment-item {
+            border-left: 5px solid var(--highlight);
         }
 
-        .priority-item .view-link {
-            border-color: #f8514933;
-            color: #ff7b72;
+        .assessment-item .name {
+            color: #1e7e34;
         }
-
     </style>
 </head>
 <body>
 
 <div class="wrapper">
     <header>
-        <h1>MSC Repository</h1>
-        <div class="subtitle">Academic Resources & Examination Documents</div>
+        <h1>MSC Statistics Resources</h1>
+        <div class="subtitle">Official repository for course modules and final exam preparation.</div>
     </header>
 
+    <span class="section-label">Module Chapters</span>
     <div class="file-list">
         <a href="Chapter_1.pdf" target="_blank" class="file-item">
             <div class="file-info">
-                <span class="name">Chapter 01</span>
-                <span class="meta">PDF Document &bull; Course Material</span>
+                <span class="name">Chapter 1: The Language of Data</span>
+                <div class="summary">Fundamental vocabulary of statistics, focusing on data types (Categorical vs. Quantitative) and the four scales of measurement (Nominal, Ordinal, Interval, and Ratio).</div>
             </div>
-            <span class="view-link">Open File</span>
+            <span class="view-link">View Document</span>
         </a>
+
         <a href="Chapter_2.pdf" target="_blank" class="file-item">
             <div class="file-info">
-                <span class="name">Chapter 02</span>
-                <span class="meta">PDF Document &bull; Course Material</span>
+                <span class="name">Chapter 2: Tabular and Graphical Methods</span>
+                <div class="summary">Visual summarization of data, detailing how to construct and interpret frequency distributions, histograms, and scatter diagrams.</div>
             </div>
-            <span class="view-link">Open File</span>
+            <span class="view-link">View Document</span>
         </a>
+
         <a href="Chapter_3.pdf" target="_blank" class="file-item">
             <div class="file-info">
-                <span class="name">Chapter 03</span>
-                <span class="meta">PDF Document &bull; Course Material</span>
+                <span class="name">Chapter 3: Numerical Measures</span>
+                <div class="summary">Calculations for measures of location (mean, median), variability (standard deviation, IQR), and relative standing (z-scores).</div>
             </div>
-            <span class="view-link">Open File</span>
+            <span class="view-link">View Document</span>
         </a>
+
         <a href="Chapter_4.pdf" target="_blank" class="file-item">
             <div class="file-info">
-                <span class="name">Chapter 04</span>
-                <span class="meta">PDF Document &bull; Course Material</span>
+                <span class="name">Chapter 4: Probability Concepts</span>
+                <div class="summary">Mathematical rules governing uncertainty, including counting techniques and the laws of addition, multiplication, and conditional probability.</div>
             </div>
-            <span class="view-link">Open File</span>
+            <span class="view-link">View Document</span>
         </a>
+
         <a href="Chapter_5.pdf" target="_blank" class="file-item">
             <div class="file-info">
-                <span class="name">Chapter 05</span>
-                <span class="meta">PDF Document &bull; Course Material</span>
+                <span class="name">Chapter 5: Discrete Probability Distributions</span>
+                <div class="summary">Models for "countable" outcomes, specifically detailing the Binomial, Poisson, and Hypergeometric distributions.</div>
             </div>
-            <span class="view-link">Open File</span>
+            <span class="view-link">View Document</span>
         </a>
+
         <a href="Chapter_6.pdf" target="_blank" class="file-item">
             <div class="file-info">
-                <span class="name">Chapter 06</span>
-                <span class="meta">PDF Document &bull; Course Material</span>
+                <span class="name">Chapter 6: Continuous Probability Distributions</span>
+                <div class="summary">Focusing on "measurable" data, this chapter centers on the Normal Distribution (the bell curve) and the Exponential distribution.</div>
             </div>
-            <span class="view-link">Open File</span>
+            <span class="view-link">View Document</span>
         </a>
+
         <a href="Chapter_7.pdf" target="_blank" class="file-item">
             <div class="file-info">
-                <span class="name">Chapter 07</span>
-                <span class="meta">PDF Document &bull; Course Material</span>
+                <span class="name">Chapter 7: Sampling Distributions</span>
+                <div class="summary">The bridge between samples and populations; explains the Central Limit Theorem and the behavior of the sample mean \(\bar{x}\) and proportion \(\bar{p}\).</div>
             </div>
-            <span class="view-link">Open File</span>
+            <span class="view-link">View Document</span>
         </a>
+
         <a href="Chapter_8.pdf" target="_blank" class="file-item">
             <div class="file-info">
-                <span class="name">Chapter 08</span>
-                <span class="meta">PDF Document &bull; Course Material</span>
+                <span class="name">Chapter 8: Interval Estimation</span>
+                <div class="summary">Creation of Confidence Intervals for population means or proportions to estimate true population parameters.</div>
             </div>
-            <span class="view-link">Open File</span>
+            <span class="view-link">View Document</span>
         </a>
+    </div>
 
-        <a href="Practice_Questions_CH_1_8.pdf" target="_blank" class="file-item priority-item">
+    <span class="section-label">Examination Materials</span>
+    <div class="file-list">
+        <a href="Practice_Questions_CH_1_8.pdf" target="_blank" class="file-item assessment-item">
             <div class="file-info">
                 <span class="name">Practice Questions (CH 1-8)</span>
-                <span class="meta">PDF Document &bull; Assessment Prep</span>
+                <div class="summary">Comprehensive problem sets covering core concepts for mid-term and final review.</div>
             </div>
-            <span class="view-link">Open File</span>
+            <span class="view-link">View Document</span>
         </a>
 
-        <a href="Mock_Exam_MSC.pdf" target="_blank" class="file-item priority-item">
+        <a href="Mock_Exam_MSC.pdf" target="_blank" class="file-item assessment-item">
             <div class="file-info">
                 <span class="name">Mock Examination</span>
-                <span class="meta">PDF Document &bull; Final Evaluation</span>
+                <div class="summary">Full-length evaluation designed to simulate the final MSC exam environment.</div>
             </div>
-            <span class="view-link">Open File</span>
+            <span class="view-link">View Document</span>
         </a>
     </div>
 </div>
