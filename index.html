@@ -3,172 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Portal | Resources</title>
+    <title>Academic Resource Repository</title>
     <style>
         :root {
             --bg: #0d1117;
-            --card-bg: #161b22;
-            --text: #c9d1d9;
-            --accent: #58a6ff;
+            --surface: #161b22;
             --border: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent: #58a6ff;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-family: -apple-system, "Segoe UI", Arial, sans-serif;
             background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+            color: var(--text-primary);
+            margin: 0;
             display: flex;
             justify-content: center;
-            padding: 40px 20px;
-            margin: 0;
+            padding: 60px 20px;
         }
 
-        .container {
+        .wrapper {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
         }
 
         header {
-            text-align: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
             margin-bottom: 40px;
         }
 
         h1 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: -0.5px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 5px;
         }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
-            transition: transform 0.2s, border-color 0.2s;
-            text-decoration: none;
+        .file-list {
             display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .file-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
             align-items: center;
+            padding: 16px 24px;
+            background: var(--surface);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-            background: #1c2128;
+        .file-item:last-child {
+            border-bottom: none;
         }
 
-        .icon {
-            font-size: 24px;
-            margin-right: 15px;
-        }
-
-        .card-content {
-            flex-grow: 1;
-        }
-
-        .card-title {
+        .file-info .name {
             display: block;
-            font-weight: 600;
-            color: var(--accent);
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 2px;
         }
 
-        .card-sub {
+        .file-info .meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .view-link {
             font-size: 0.85rem;
-            color: #8b949e;
+            color: var(--accent);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 4px;
         }
 
-        .special-card {
-            grid-column: 1 / -1;
-            border-left: 4px solid #f85149;
+        /* Distinct color for exams/questions without using emojis */
+        .priority-item .name {
+            color: #ff7b72;
         }
+
+        .priority-item .view-link {
+            border-color: #f8514933;
+            color: #ff7b72;
+        }
+
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="wrapper">
     <header>
-        <h1>📚 My Study Portal</h1>
-        <p>Resource library for MSC Exam Prep</p>
+        <h1>MSC Repository</h1>
+        <div class="subtitle">Academic Resources & Examination Documents</div>
     </header>
 
-    <div class="grid">
-        <a href="Chapter_1.pdf" target="_blank" class="card">
-            <span class="icon">📄</span>
-            <div class="card-content">
-                <span class="card-title">Chapter 1</span>
-                <span class="card-sub">PDF Document</span>
+    <div class="file-list">
+        <a href="Chapter_1.pdf" target="_blank" class="file-item">
+            <div class="file-info">
+                <span class="name">Chapter 01</span>
+                <span class="meta">PDF Document &bull; Course Material</span>
             </div>
+            <span class="view-link">Open File</span>
         </a>
-        <a href="Chapter_2.pdf" target="_blank" class="card">
-            <span class="icon">📄</span>
-            <div class="card-content">
-                <span class="card-title">Chapter 2</span>
-                <span class="card-sub">PDF Document</span>
+        <a href="Chapter_2.pdf" target="_blank" class="file-item">
+            <div class="file-info">
+                <span class="name">Chapter 02</span>
+                <span class="meta">PDF Document &bull; Course Material</span>
             </div>
+            <span class="view-link">Open File</span>
         </a>
-        <a href="Chapter_3.pdf" target="_blank" class="card">
-            <span class="icon">📄</span>
-            <div class="card-content">
-                <span class="card-title">Chapter 3</span>
-                <span class="card-sub">PDF Document</span>
+        <a href="Chapter_3.pdf" target="_blank" class="file-item">
+            <div class="file-info">
+                <span class="name">Chapter 03</span>
+                <span class="meta">PDF Document &bull; Course Material</span>
             </div>
+            <span class="view-link">Open File</span>
         </a>
-        <a href="Chapter_4.pdf" target="_blank" class="card">
-            <span class="icon">📄</span>
-            <div class="card-content">
-                <span class="card-title">Chapter 4</span>
-                <span class="card-sub">PDF Document</span>
+        <a href="Chapter_4.pdf" target="_blank" class="file-item">
+            <div class="file-info">
+                <span class="name">Chapter 04</span>
+                <span class="meta">PDF Document &bull; Course Material</span>
             </div>
+            <span class="view-link">Open File</span>
         </a>
-        <a href="Chapter_5.pdf" target="_blank" class="card">
-            <span class="icon">📄</span>
-            <div class="card-content">
-                <span class="card-title">Chapter 5</span>
-                <span class="card-sub">PDF Document</span>
+        <a href="Chapter_5.pdf" target="_blank" class="file-item">
+            <div class="file-info">
+                <span class="name">Chapter 05</span>
+                <span class="meta">PDF Document &bull; Course Material</span>
             </div>
+            <span class="view-link">Open File</span>
         </a>
-        <a href="Chapter_6.pdf" target="_blank" class="card">
-            <span class="icon">📄</span>
-            <div class="card-content">
-                <span class="card-title">Chapter 6</span>
-                <span class="card-sub">PDF Document</span>
+        <a href="Chapter_6.pdf" target="_blank" class="file-item">
+            <div class="file-info">
+                <span class="name">Chapter 06</span>
+                <span class="meta">PDF Document &bull; Course Material</span>
             </div>
+            <span class="view-link">Open File</span>
         </a>
-        <a href="Chapter_7.pdf" target="_blank" class="card">
-            <span class="icon">📄</span>
-            <div class="card-content">
-                <span class="card-title">Chapter 7</span>
-                <span class="card-sub">PDF Document</span>
+        <a href="Chapter_7.pdf" target="_blank" class="file-item">
+            <div class="file-info">
+                <span class="name">Chapter 07</span>
+                <span class="meta">PDF Document &bull; Course Material</span>
             </div>
+            <span class="view-link">Open File</span>
         </a>
-        <a href="Chapter_8.pdf" target="_blank" class="card">
-            <span class="icon">📄</span>
-            <div class="card-content">
-                <span class="card-title">Chapter 8</span>
-                <span class="card-sub">PDF Document</span>
+        <a href="Chapter_8.pdf" target="_blank" class="file-item">
+            <div class="file-info">
+                <span class="name">Chapter 08</span>
+                <span class="meta">PDF Document &bull; Course Material</span>
             </div>
-        </a>
-
-        <a href="Practice_Questions_CH_1_8.pdf" target="_blank" class="card special-card">
-            <span class="icon">✍️</span>
-            <div class="card-content">
-                <span class="card-title">Practice Questions</span>
-                <span class="card-sub">Chapters 1 - 8 Comprehensive</span>
-            </div>
+            <span class="view-link">Open File</span>
         </a>
 
-        <a href="Mock_Exam_MSC.pdf" target="_blank" class="card special-card" style="border-left-color: #fca321;">
-            <span class="icon">🎓</span>
-            <div class="card-content">
-                <span class="card-title">Mock Exam</span>
-                <span class="card-sub">Final Preparation</span>
+        <a href="Practice_Questions_CH_1_8.pdf" target="_blank" class="file-item priority-item">
+            <div class="file-info">
+                <span class="name">Practice Questions (CH 1-8)</span>
+                <span class="meta">PDF Document &bull; Assessment Prep</span>
             </div>
+            <span class="view-link">Open File</span>
+        </a>
+
+        <a href="Mock_Exam_MSC.pdf" target="_blank" class="file-item priority-item">
+            <div class="file-info">
+                <span class="name">Mock Examination</span>
+                <span class="meta">PDF Document &bull; Final Evaluation</span>
+            </div>
+            <span class="view-link">Open File</span>
         </a>
     </div>
 </div>
